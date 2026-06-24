@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "topics": [
+    {
+      "topic": "Configuration Files",
+      "file": "references/develop.md",
+      "summary": "Reference: Configuration Files.",
+      "keywords": [
+        "configuration-files",
+        "reference"
+      ]
+    },
+    {
+      "topic": "Calling Rust (part 1)",
+      "file": "references/calling-rust.md",
+      "summary": "Reference: Calling Rust (part 1).",
+      "keywords": [
+        "calling-rust-part-1",
+        "reference"
+      ]
+    },
+    {
+      "topic": "Calling Rust (part 2)",
+      "file": "references/calling-rust-2.md",
+      "summary": "Reference: Calling Rust (part 2).",
+      "keywords": [
+        "calling-rust-part-2",
+        "reference"
+      ]
+    },
+    {
+      "topic": "Calling Frontend",
+      "file": "references/calling-frontend.md",
+      "summary": "Reference: Calling Frontend.",
+      "keywords": [
+        "calling-frontend",
+        "reference"
+      ]
+    },
+    {
+      "topic": "Resources, Sidecar",
+      "file": "references/develop-2.md",
+      "summary": "Reference: Resources, Sidecar.",
+      "keywords": [
+        "resources-sidecar",
+        "reference"
+      ]
+    },
+    {
+      "topic": "State Management, Updating Dependencies, Icons",
+      "file": "references/develop-3.md",
+      "summary": "Reference: State Management, Updating Dependencies, Icons.",
+      "keywords": [
+        "state-management-updating-dependencies-icons",
+        "reference"
+      ]
+    },
+    {
+      "topic": "Crabnebula Devtools, Linux Graphics, Neovim, Rustrover",
+      "file": "references/debug.md",
+      "summary": "Reference: Crabnebula Devtools, Linux Graphics, Neovim, Rustrover.",
+      "keywords": [
+        "crabnebula-devtools-linux-graphics-neovim-rustrover",
+        "reference"
+      ]
+    },
+    {
+      "topic": "Vscode",
+      "file": "references/vscode.md",
+      "summary": "Reference: Vscode.",
+      "keywords": [
+        "vscode",
+        "reference"
+      ]
+    },
+    {
+      "topic": "Plugins",
+      "file": "references/plugins.md",
+      "summary": "Reference: Plugins.",
+      "keywords": [
+        "plugins",
+        "reference"
+      ]
+    },
+    {
+      "topic": "Develop Mobile",
+      "file": "references/develop-mobile.md",
+      "summary": "Reference: Develop Mobile.",
+      "keywords": [
+        "develop-mobile",
+        "reference"
+      ]
+    },
+    {
+      "topic": "Mocking",
+      "file": "references/tests.md",
+      "summary": "Reference: Mocking.",
+      "keywords": [
+        "mocking",
+        "reference"
+      ]
+    },
+    {
+      "topic": "Ci, Example",
+      "file": "references/webdriver.md",
+      "summary": "Reference: Ci, Example.",
+      "keywords": [
+        "ci-example",
+        "reference"
+      ]
+    }
+  ]
+}
