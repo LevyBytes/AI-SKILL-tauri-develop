@@ -1,47 +1,35 @@
 ---
 name: tauri-develop
-description: Use when developing a Tauri v2 desktop or mobile app: project configuration (tauri.conf.json), calling Rust commands from the frontend and calling the frontend from Rust (commands, events, channels), state management, bundling resources and sidecar binaries, app icons, updating dependencies, debugging (VS Code, RustRover, Neovim, Linux graphics, CrabNebula DevTools), writing and developing plugins (including mobile), and testing (mocking, WebDriver with Selenium/WebdriverIO). Covers the Develop section of the Tauri v2 docs. Not for Tauri v1.
-covers:
-  - configuration-files
-  - calling-rust
-  - calling-frontend
-  - resources-sidecar
-  - vscode
-  - plugins
-  - develop-mobile
-  - mocking
-  - ci-example
+description: "Use when developing Tauri v2 desktop or mobile applications: configuration, Rust commands, frontend events and channels, shared state, resources and sidecars, dependency updates, icons, debugging, plugins, mobile permissions, IPC mocks, Selenium or WebdriverIO tests. Not for Tauri v1."
+metadata:
+  last-updated: "2026-10-15"
 ---
 
-# Tauri v2 - Develop Reference
+# Context Router
 
-Faithful reference for Tauri v2 - Develop, split into one focused file per subject across 12 reference files.
-Identifiers (API/type/function names, flags, paths, enums, numbers) are preserved verbatim.
+| Topic | Open when | Read |
+| --- | --- | --- |
+| Configuration Files | Open when running desktop or mobile development, selecting a device or inspector, or editing Tauri configuration, Cargo and package manifests. | [Reference](references/development-configuration-index.md) |
+| Rust Commands and Events | Open when invoking Rust commands, passing or returning data, handling errors and async work, accessing Tauri context, or registering frontend and Rust event listeners. | [Rust commands and events](references/rust-commands-events-index.md) |
+| Rust Listener Cleanup | Open when ending Rust event subscriptions with unlisten or registering a one-shot listener with once. | [Rust event listener cleanup](references/rust-event-listener-cleanup.md) |
+| Calling Frontend | Open when emitting Rust events to the frontend, selecting event targets and payloads, managing listener lifetimes, streaming channels or evaluating JavaScript. | [Reference](references/rust-frontend-communication-index.md) |
+| Resources, Sidecar | Open when bundling and resolving resource files or configuring, naming and running sidecar binaries with permitted arguments. | [Reference](references/resources-sidecars-index.md) |
+| Managed state | Open when sharing mutable state, choosing mutexes or retrieving exact state types. | [Managed state](references/managed-state-index.md) |
+| Dependency updates | Open when updating and synchronizing npm packages and Cargo crates. | [Dependency updates](references/npm-cargo-dependency-updates.md) |
+| Application icons | Open when generating app icons or checking platform icon formats. | [Application icons](references/app-icons-index.md) |
+| Debugging Tools | Open when debugging Rust or WebView processes, configuring CrabNebula, Neovim or JetBrains tools, or diagnosing Linux graphics failures. | [Reference](references/debugging-tools-index.md) |
+| VS Code | Open when configuring VS Code LLDB or the Windows Visual Studio debugger for a Tauri application. | [Reference](references/vscode-tauri-debugging.md) |
+| Plugins | Open when initializing Tauri plugins, exposing APIs and commands, handling lifecycle events or defining command permissions and scope schemas. | [Reference](references/plugin-development-index.md) |
+| Mobile Plugins | Open when implementing Android or iOS Tauri plugins, mobile commands, arguments, permissions, lifecycle events, Rust bridges or Android memory-page support. | [Reference](references/mobile-plugin-development-index.md) |
+| Mocking | Open when mocking Tauri IPC commands, events or windows and cleaning up test mocks. | [Reference](references/frontend-ipc-event-mocks.md) |
+| WebDriver Testing | Open when setting up platform WebDrivers, CI, Selenium or WebdriverIO projects and their test-suite lifecycle. | [Reference](references/webdriver-testing-index.md) |
 
-## When to use this
+Open the [reference index](references/INDEX.md) or [topic catalog](references/topics.json) when selecting a reference topic.
 
-Use this skill when the task involves developing a Tauri v2 app - tauri.conf.json configuration, calling Rust/frontend, state management, resources/sidecar, icons, debugging, plugin development, and testing.
+# Language Translations
 
-## Workflow
+[Reference Language Selection](references/languages.md)
 
-1. Open `references/INDEX.md` (or `references/topics.json`) and pick the one file that matches.
-2. Read only that file; open another only if the task spans subjects. Grep across files when needed: `rg -n "PATTERN" references/*.md`.
-3. Treat every identifier as an exact reference fact — never invent or paraphrase.
+# Context For Open Source
 
-## Gotchas
-
-Recurring failure modes and what to do instead live in the sibling [GOTCHA.md](GOTCHA.md).
-
-## References
-
-All depth lives in `references/` — start at `references/INDEX.md`, metadata in `references/topics.json`. One subject per file.
-
-## Official documentation
-
-The official documentation is at https://v2.tauri.app/develop/ — consult it to verify anything uncertain, conflicting, or version-specific.
-
-## Verification
-
-```powershell
-python .agents/skills/skill-drafting/scripts/validate_skill_package.py .agents/skills/tauri-develop
-```
+Skill reference documentation is interpreted content for use in open source projects. Check against [official documentation sources](https://v2.tauri.app/develop/) when dealing with defects or issues that may come up from interpreting this skill's references.

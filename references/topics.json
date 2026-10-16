@@ -1,113 +1,20 @@
 {
   "schema_version": 1,
   "topics": [
-    {
-      "topic": "Configuration Files",
-      "file": "references/develop.md",
-      "summary": "Reference: Configuration Files.",
-      "keywords": [
-        "configuration-files",
-        "reference"
-      ]
-    },
-    {
-      "topic": "Calling Rust (part 1)",
-      "file": "references/calling-rust.md",
-      "summary": "Reference: Calling Rust (part 1).",
-      "keywords": [
-        "calling-rust-part-1",
-        "reference"
-      ]
-    },
-    {
-      "topic": "Calling Rust (part 2)",
-      "file": "references/calling-rust-2.md",
-      "summary": "Reference: Calling Rust (part 2).",
-      "keywords": [
-        "calling-rust-part-2",
-        "reference"
-      ]
-    },
-    {
-      "topic": "Calling Frontend",
-      "file": "references/calling-frontend.md",
-      "summary": "Reference: Calling Frontend.",
-      "keywords": [
-        "calling-frontend",
-        "reference"
-      ]
-    },
-    {
-      "topic": "Resources, Sidecar",
-      "file": "references/develop-2.md",
-      "summary": "Reference: Resources, Sidecar.",
-      "keywords": [
-        "resources-sidecar",
-        "reference"
-      ]
-    },
-    {
-      "topic": "State Management, Updating Dependencies, Icons",
-      "file": "references/develop-3.md",
-      "summary": "Reference: State Management, Updating Dependencies, Icons.",
-      "keywords": [
-        "state-management-updating-dependencies-icons",
-        "reference"
-      ]
-    },
-    {
-      "topic": "Crabnebula Devtools, Linux Graphics, Neovim, Rustrover",
-      "file": "references/debug.md",
-      "summary": "Reference: Crabnebula Devtools, Linux Graphics, Neovim, Rustrover.",
-      "keywords": [
-        "crabnebula-devtools-linux-graphics-neovim-rustrover",
-        "reference"
-      ]
-    },
-    {
-      "topic": "Vscode",
-      "file": "references/vscode.md",
-      "summary": "Reference: Vscode.",
-      "keywords": [
-        "vscode",
-        "reference"
-      ]
-    },
-    {
-      "topic": "Plugins",
-      "file": "references/plugins.md",
-      "summary": "Reference: Plugins.",
-      "keywords": [
-        "plugins",
-        "reference"
-      ]
-    },
-    {
-      "topic": "Develop Mobile",
-      "file": "references/develop-mobile.md",
-      "summary": "Reference: Develop Mobile.",
-      "keywords": [
-        "develop-mobile",
-        "reference"
-      ]
-    },
-    {
-      "topic": "Mocking",
-      "file": "references/tests.md",
-      "summary": "Reference: Mocking.",
-      "keywords": [
-        "mocking",
-        "reference"
-      ]
-    },
-    {
-      "topic": "Ci, Example",
-      "file": "references/webdriver.md",
-      "summary": "Reference: Ci, Example.",
-      "keywords": [
-        "ci-example",
-        "reference"
-      ]
-    }
+    {"topic": "Configuration Files", "file": "references/development-configuration-index.md", "summary": "Open when running desktop or mobile development, selecting a device or inspector, or editing Tauri configuration, Cargo and package manifests.", "keywords": ["Desktop development and Web Inspector", "Mobile development server and device selection", "Mobile IDEs, Web Inspector and troubleshooting", "Source changes, browser tools and source control", "Tauri configuration formats", "Platform configuration and configuration merging", "Cargo and package manifests"]},
+    {"topic": "Rust commands and events", "file": "references/rust-commands-events-index.md", "summary": "Open when invoking Rust commands, passing or returning data, handling errors and async work, accessing Tauri context, or registering frontend and Rust event listeners.", "keywords": ["Rust command registration, modules and WASM", "Command arguments, return data and array buffers", "Command errors and serialization", "Async commands and JavaScript invocation", "Command channels, window, app handle and state", "Raw requests and multiple commands", "Frontend event emission and listener registration", "Listener timing, ordering and framework cleanup", "Rust global and webview listener registration"]},
+    {"topic": "Rust event listener cleanup", "file": "references/rust-event-listener-cleanup.md", "summary": "Open when ending Rust event subscriptions with unlisten or registering a one-shot listener with once.", "keywords": ["Rust event listener cleanup"]},
+    {"topic": "Calling Frontend", "file": "references/rust-frontend-communication-index.md", "summary": "Open when emitting Rust events to the frontend, selecting event targets and payloads, managing listener lifetimes, streaming channels or evaluating JavaScript.", "keywords": ["Rust event emission and serialized payloads", "Frontend event listener registration", "Frontend listener timing, ordering and framework cleanup", "Rust listeners and subscription lifetime", "Rust-to-frontend channels and JavaScript evaluation"]},
+    {"topic": "Resources, Sidecar", "file": "references/resources-sidecars-index.md", "summary": "Open when bundling and resolving resource files or configuring, naming and running sidecar binaries with permitted arguments.", "keywords": ["Resource bundle configuration", "Resource path resolution and Android paths", "Read resources in Rust and JavaScript with permissions", "Sidecar binary configuration and target naming", "Run sidecars and pass permitted arguments"]},
+    {"topic": "Managed state", "file": "references/managed-state-index.md", "summary": "Open when sharing mutable state, choosing mutexes or retrieving exact state types.", "keywords": ["Managed state"]},
+    {"topic": "Dependency updates", "file": "references/npm-cargo-dependency-updates.md", "summary": "Open when updating and synchronizing npm packages and Cargo crates.", "keywords": ["Dependency updates"]},
+    {"topic": "Application icons", "file": "references/app-icons-index.md", "summary": "Open when generating app icons or checking platform icon formats.", "keywords": ["Application icons"]},
+    {"topic": "Crabnebula Devtools, Linux Graphics, Neovim, Rustrover", "file": "references/debugging-tools-index.md", "summary": "Open when debugging Rust or WebView processes, configuring CrabNebula, Neovim or JetBrains tools, or diagnosing Linux graphics failures.", "keywords": ["Development diagnostics and Rust or WebView consoles", "Debug builds, production inspector and core debugger", "CrabNebula DevTools setup", "Linux graphics symptoms and workarounds", "Neovim debugger and development server", "JetBrains Cargo and development server debugging"]},
+    {"topic": "Vscode", "file": "references/vscode-tauri-debugging.md", "summary": "Open when configuring VS Code LLDB or the Windows Visual Studio debugger for a Tauri application.", "keywords": ["Vscode"]},
+    {"topic": "Plugins", "file": "references/plugin-development-index.md", "summary": "Open when initializing Tauri plugins, exposing APIs and commands, handling lifecycle events or defining command permissions and scope schemas.", "keywords": ["Plugin naming, initialization and configuration", "Plugin setup and lifecycle events", "Expose Rust APIs and commands", "Command permissions and scope schemas", "Permission sets, defaults and generated permissions"]},
+    {"topic": "Develop Mobile", "file": "references/mobile-plugin-development-index.md", "summary": "Open when implementing Android or iOS Tauri plugins, mobile commands, arguments, permissions, lifecycle events, Rust bridges or Android memory-page support.", "keywords": ["Android and iOS plugin initialization and configuration", "Mobile load and intent lifecycle", "Mobile command implementations and argument models", "Call Rust from mobile plugins and support Android memory pages", "Mobile permissions and event delivery"]},
+    {"topic": "Mocking", "file": "references/frontend-ipc-event-mocks.md", "summary": "Open when mocking Tauri IPC commands, events or windows and cleaning up test mocks.", "keywords": ["Mocking"]},
+    {"topic": "Ci, Example", "file": "references/webdriver-testing-index.md", "summary": "Open when setting up platform WebDrivers, CI, Selenium or WebdriverIO projects and their test-suite lifecycle.", "keywords": ["WebDriver platform requirements and driver setup", "WebDriver continuous integration", "Selenium project and driver setup", "Selenium assertions and test-suite lifecycle", "WebdriverIO project setup", "WebdriverIO configuration, specs and execution"]},
+    {"topic": "Reference Language Selection", "file": "references/languages.md", "summary": "Open when you need a language version of this skill's references other than English.", "keywords": ["reference language", "translated references", "language selection"]}
   ]
 }

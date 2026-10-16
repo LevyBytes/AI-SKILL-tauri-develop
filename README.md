@@ -1,64 +1,53 @@
-# Tauri v2 Develop Reference Skill
+# Tauri v2 Development
 
-A reference skill for **[Agent Kaizen](https://github.com/DirectorGunner/agent-kaizen)** covering the Develop section of the Tauri v2 documentation, for building Tauri v2 desktop and mobile apps. The prose is original (recontextualized); identifiers — API/type/function names, flags, paths, enums, numbers, and code — are preserved exactly.
-
-## What this skill covers
-
-This skill is a faithful reference for the Develop section of the Tauri v2 documentation, for building Tauri v2 desktop and mobile apps. It covers project configuration (`tauri.conf.json`), calling Rust commands from the frontend and the frontend from Rust (commands, events, channels), state management, bundling resources and sidecar binaries, app icons, updating dependencies, and debugging (VS Code, RustRover, Neovim, Linux graphics, CrabNebula DevTools). It also covers writing and developing plugins — including mobile plugins — and testing via mocking and WebDriver (Selenium / WebdriverIO). It is scoped to Tauri v2 and is not for Tauri v1.
-
-## What's inside
-
-- `SKILL.md` — the skill entry point: frontmatter trigger, when-to-use, workflow, and verification.
-- `references/` — right-sized topic files (one subject per file: configuration, calling Rust, calling the frontend, resources/sidecar, debugging, VS Code, plugins, mobile development, tests, WebDriver), plus `INDEX.md` and `topics.json` for routing.
-- `GOTCHA.md` — recurring failure modes and what to do instead.
-
-## Use it
-
-This skill is one git repo inside the Agent Kaizen **skills store**. The store nests two folders on purpose: the outer **`SKILLS\`** is a VS Code project for building and maintaining skills (its own workspace + tooling), and the inner lowercase **`skills\`** holds every skill as its own repo. That split lets a project pull skills two ways — the **whole `skills\` folder at once** (loads everything — **not recommended**) or **one skill at a time** (recommended: load only what a task needs and stay under Claude Code's skill-listing budget).
-
-Paths below use **`%DEVROOT%`** — the `DEVROOT` environment variable pointing at the folder that contains `SKILLS\`. Set it once by running **`SetDevRoot.cmd`** in the SKILLS repo root (no admin); a new shell then resolves `%DEVROOT%` automatically.
-
-Link **just this skill** (recommended) — a Windows directory junction, no admin:
-
-```cmd
-mklink /J .agents\skills\tauri-develop  "%DEVROOT%\SKILLS\skills\tauri-develop"
-mklink /J .claude\skills\tauri-develop  "%DEVROOT%\SKILLS\skills\tauri-develop"
+```mermaid
+---
+config:
+  flowchart:
+    wrappingWidth: 400
+---
+flowchart LR
+    brand["KAIZEN<br/>SKILL LIBRARY"]:::brand
+    skill("Tauri v2 Development"):::skill
+    first(["Rust + Frontend"]):::topic
+    second(["Resources + Plugins"]):::topic
+    third(["Debugging + Tests"]):::accent
+    brand --- skill
+    skill --- first
+    skill --- second
+    skill --- third
+    classDef brand fill:#0f172a,color:#67e8f9,stroke:#22d3ee,stroke-width:2px,font-family:monospace
+    classDef skill fill:#172554,color:#eff6ff,stroke:#60a5fa,stroke-width:2px,font-size:20px
+    classDef topic fill:#0c4a6e,color:#bae6fd,stroke:#38bdf8,stroke-width:1px
+    classDef accent fill:#1e293b,color:#fcd34d,stroke:#f59e0b,stroke-width:1px
+    linkStyle default stroke:#38bdf8,stroke-width:1px
 ```
 
-Or link the **whole store** at once (loads every skill — not recommended outside a skills-dev project):
+Tauri v2 development references that connect frontend code, Rust application logic and desktop or mobile integration. The package is especially useful when a feature crosses those boundaries and its setup, event lifecycle or platform requirements need to be explicit.
 
-```cmd
-mklink /J .agents\skills  "%DEVROOT%\SKILLS\skills"
-mklink /J .claude\skills  "%DEVROOT%\SKILLS\skills"
-```
+Use when developing Tauri v2 desktop or mobile applications: configuration, Rust commands, frontend events and channels, shared state, resources and sidecars, dependency updates, icons, debugging, plugins, mobile permissions, IPC mocks, Selenium or WebdriverIO tests. Not for Tauri v1.
 
-Remove a link (the store copy is untouched):
+## What this skill helps with
 
-```cmd
-rmdir .agents\skills\tauri-develop
-rmdir .claude\skills\tauri-develop
-```
+| Task | Useful reference material |
+| --- | --- |
+| [Connect Rust and the frontend](references/rust-commands-events-index.md) | Choose command and event guidance, including registration and listener lifecycle details. |
+| [Bundle resources and sidecars](references/resources-sidecars-index.md) | Find resource paths, external-process setup and the associated platform conditions. |
+| [Build plugins](references/plugin-development-index.md) | Follow plugin development routes and continue into mobile-specific guidance where needed. |
+| [Debug and test an application](references/webdriver-testing-index.md) | Find browser-driver testing workflows alongside the separate debugging and IPC-mock references. |
 
-The agent (OpenAI Codex, Claude Code) then auto-loads this skill whenever a task matches its triggers. Built and validated with **[skill-drafting](https://github.com/DirectorGunner/AI-skill-drafting)** to the Agent Kaizen gold standard.
+## The work behind the references
 
-## Status
+The references have been reorganized into descriptive topics with linked setup and continuation files. Identified formatting and code-example defects were repaired during source review, including command registration and workflow examples; complete examples and illustrative fragments are distinguished.
 
-Recontextualized into original prose (identifiers preserved); packaged in the skills store and ready to publish as the public `AI-SKILL-tauri-develop` repository. Publication is performed by the maintainer.
+## Start here
 
-## Reducing idle context cost (skill invocation policy)
+Start with [SKILL.md](SKILL.md) and follow its context routes.
 
-Every installed skill costs a little context on every session: the agent sees each skill's name and description before you ever use it. If you rarely use this skill in a given project, you can keep it installed and still explicitly invocable while hiding it from the model's automatic listing.
+Use this package with Tauri v2. Read each example's linked setup, dependencies and target-platform conditions before adapting it. Begin with [configuration](references/development-configuration-index.md) or [debugging tools](references/debugging-tools-index.md) when the application context is not yet established.
 
-Doing so does **not** modify this skill's source repo — the policy lives in your local agent settings. The Agent Kaizen **[skill-drafting](https://github.com/DirectorGunner/AI-skill-drafting)** repo ships a manager, `scripts/skill_policy.py`, that sets this for all your skills at once:
+## Sources and license
 
-```bash
-python skill_policy.py audit     # list every skill + its current policy + idle cost
-python skill_policy.py plan      # write a decision file with recommendations (nothing applied)
-# edit that decision file: set selected_policy + approved:true for the skills you choose
-python skill_policy.py preview   # show the exact change
-python skill_policy.py apply     # apply ONLY what you approved (backup + rollback recorded)
-python skill_policy.py restore   # roll back
-```
+Skill reference documentation is interpreted content for use in open source projects. Check against [official documentation sources](https://v2.tauri.app/develop/) when dealing with defects or issues that may come up from interpreting this skill's references.
 
-- **Claude Code (works today):** writes `skillOverrides: { "<skill>": "user-invocable-only" }` to `.claude/settings.local.json` — zero idle listing cost, still available from the `/skills` menu. Start a new session for it to take effect; invoke it any time via `/skills`.
-- **Codex (currently unreliable):** explicit-only Codex skills are affected by an open bug ([openai/codex#23454](https://github.com/openai/codex/issues/23454)) where `$skill` invocation of an explicit-only local skill can fail. Until it's fixed, leave Codex skills implicit, or fully disable rarely-used ones with `[[skills.config]] enabled = false` in `config.toml`. The manager audits Codex but does not change Codex policy.
+Licensed under **AGPL-3.0**; see [LICENSE](LICENSE). Part of the [Agent Kaizen](https://github.com/LevyBytes/agent-kaizen) skill library.
