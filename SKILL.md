@@ -1,8 +1,9 @@
 ---
 name: tauri-develop
 description: "Use when developing Tauri v2 desktop or mobile applications: configuration, Rust commands, frontend events and channels, shared state, resources and sidecars, dependency updates, icons, debugging, plugins, mobile permissions, IPC mocks, Selenium or WebdriverIO tests. Not for Tauri v1."
+license: Apache-2.0
 metadata:
-  last-updated: "2026-10-15"
+  last-updated: "2026-10-22"
 ---
 
 # Context Router

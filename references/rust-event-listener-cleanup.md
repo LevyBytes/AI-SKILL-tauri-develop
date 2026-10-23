@@ -34,4 +34,4 @@ For details on subscribing to and dispatching events directly from Rust, consult
 
 ---
 
-[Register Rust event listeners](rust-event-listener-registration.md) — Open before applying cleanup to the global or webview subscriptions.
+[Register Rust event listeners](rust-event-listener-registration.md): Open before applying cleanup to the global or webview subscriptions.

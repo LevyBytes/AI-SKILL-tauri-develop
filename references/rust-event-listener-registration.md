@@ -63,4 +63,4 @@ pub fn run() {
 }
 ```
 
-[Rust event listener cleanup](rust-event-listener-cleanup.md) — Open when ending Rust event subscriptions with unlisten or registering a one-shot listener with once.
+[Rust event listener cleanup](rust-event-listener-cleanup.md) - Open when ending Rust event subscriptions with unlisten or registering a one-shot listener with once.
