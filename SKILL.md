@@ -27,6 +27,8 @@ metadata:
 
 Open the [reference index](references/INDEX.md) or [topic catalog](references/topics.json) when selecting a reference topic.
 
+Open when implementing a desktop or mobile WebView interface or testing its native boundary. [Web surfaces](references/web-surfaces.md).
+
 # Language Translations
 
 [Reference Language Selection](references/languages.md)

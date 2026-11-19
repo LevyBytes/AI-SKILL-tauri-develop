@@ -16,4 +16,5 @@
 | Develop Mobile | Open when implementing Android or iOS Tauri plugins, mobile commands, arguments, permissions, lifecycle events, Rust bridges or Android memory-page support. | [Reference](mobile-plugin-development-index.md) |
 | Mocking | Open when mocking Tauri IPC commands, events or windows and cleaning up test mocks. | [Reference](frontend-ipc-event-mocks.md) |
 | Ci, Example | Open when setting up platform WebDrivers, CI, Selenium or WebdriverIO projects and their test-suite lifecycle. | [Reference](webdriver-testing-index.md) |
+| Web surfaces | Open when implementing a desktop or mobile WebView interface or testing its native boundary. | [Web surfaces](web-surfaces.md) |
 | Reference Language Selection | Open when you need a language version of this skill's references other than English. | [Reference](languages.md) |
