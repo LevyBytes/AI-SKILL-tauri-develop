@@ -1,50 +1,68 @@
-# Tauri v2 Development
+# Tauri v2 Development Agent Skill
 
-```mermaid
----
-config:
-  flowchart:
-    wrappingWidth: 400
----
-flowchart LR
-    brand["KAIZEN<br/>SKILL LIBRARY"]:::brand
-    skill("Tauri v2 Development"):::skill
-    first(["Rust + Frontend"]):::topic
-    second(["Resources + Plugins"]):::topic
-    third(["Debugging + Tests"]):::accent
-    brand --- skill
-    skill --- first
-    skill --- second
-    skill --- third
-    classDef brand fill:#0f172a,color:#67e8f9,stroke:#22d3ee,stroke-width:2px,font-family:monospace
-    classDef skill fill:#172554,color:#eff6ff,stroke:#60a5fa,stroke-width:2px,font-size:20px
-    classDef topic fill:#0c4a6e,color:#bae6fd,stroke:#38bdf8,stroke-width:1px
-    classDef accent fill:#1e293b,color:#fcd34d,stroke:#f59e0b,stroke-width:1px
-    linkStyle default stroke:#38bdf8,stroke-width:1px
+![Tauri v2 Development agent skill: Rust + Frontend, Mobile + Plugins, Debugging + Tests](.github/readme-banner.png)
+
+Gives Claude Code, Codex and other coding agents 135 focused references for building Tauri v2 desktop and mobile apps: configuration, Rust commands, events and channels between Rust and the frontend, managed state, resources and sidecars, icons, debugging, plugins and mobile plugins, IPC mocks, and Selenium and WebdriverIO tests. It also carries web platform guidance for the app's WebView interface, adapted to WebView2, Android WebView, WKWebView and WebKitGTK. Tauri v1 is not covered.
+
+**Status: early draft.** The reference pages are in place; scripts, assets and evaluations will be added over time.
+
+## Install
+
+```sh
+npx skills add LevyBytes/AI-SKILL-tauri-develop -g
 ```
 
-Tauri v2 development references that connect frontend code, Rust application logic and desktop or mobile integration. The package is especially useful when a feature crosses those boundaries and its setup, event lifecycle or platform requirements need to be explicit.
+This installs the skill as `tauri-develop` for each coding agent it finds on your computer; without `-g` it goes into the current project only. The command needs Node.js 22.20 or later.
+
+<details>
+<summary>Install without Node.js</summary>
+
+Clone the repository into your agent's skills folder:
+
+| Agent | Command |
+| --- | --- |
+| Claude Code | `git clone https://github.com/LevyBytes/AI-SKILL-tauri-develop ~/.claude/skills/tauri-develop` |
+| Codex | `git clone https://github.com/LevyBytes/AI-SKILL-tauri-develop ~/.agents/skills/tauri-develop` |
+
+</details>
+
+## Use
+
+Ask your agent about your Tauri app as usual; it loads the skill when a task matches. You can also call it by name with `/tauri-develop` in Claude Code or `$tauri-develop` in Codex.
+
+- "How do I return a typed error from a Tauri command to the frontend?"
+- "How do I stream download progress from Rust to the frontend with a channel?"
+- "How do I bundle a sidecar binary and allow it only specific arguments?"
+- "How do I mock Tauri IPC commands in frontend unit tests?"
+- "How do I run WebdriverIO end-to-end tests for my Tauri app in GitHub Actions?"
+
+## What's inside
+
+| Area | Pages | Covers |
+| --- | ---: | --- |
+| [Configuration and development](references/development-configuration-index.md) | 7 | Configuration formats, build variants, platform-specific configuration, Cargo and npm manifests |
+| [Rust commands and events](references/rust-commands-events-index.md), [calling the frontend](references/rust-frontend-communication-index.md) | 35 | Registering commands, arguments and return data, errors, async commands, raw requests, events in both directions, event targets, channels, JavaScript evaluation, listener cleanup in React, Vue and Svelte |
+| [Managed state](references/managed-state-index.md) | 5 | Registering and accessing state, choosing a mutex, exact state types |
+| [Resources and sidecars](references/resources-sidecars-index.md) | 14 | Bundling and resolving resources, read permissions, naming and running sidecar binaries, argument allowlists |
+| [App icons](references/app-icons-index.md), [dependency updates](references/npm-cargo-dependency-updates.md) | 4 | Generating icons, platform icon formats, keeping npm packages and Cargo crates in step |
+| [Debugging](references/debugging-tools-index.md) | 15 | The WebView inspector, production builds, CrabNebula DevTools, VS Code, Neovim and JetBrains debugging, Linux graphics failures |
+| [Plugins](references/plugin-development-index.md) | 14 | Plugin setup and naming, Rust APIs and commands, lifecycle hooks, command permissions, permission sets and scope schemas |
+| [Mobile](references/mobile-plugin-development-index.md) | 21 | The mobile development server and devices, Android and iOS plugins, mobile commands, arguments and permissions, Rust bridges through JNI and FFI |
+| [IPC mocks](references/frontend-ipc-event-mocks.md) | 6 | Mocking commands, events, windows and shell commands, spying on commands |
+| [WebDriver testing](references/webdriver-testing-index.md) | 14 | Platform drivers, Selenium and WebdriverIO projects, test lifecycles, GitHub Actions |
+| [Web surfaces](references/web-surfaces.md) | 1,495 | The WebView interface: HTML, forms, components, accessibility, CSS layout, interaction, performance, security and passkeys, privacy, built-in AI APIs, WebMCP and WebAssembly, with what changes inside a Tauri window |
+
+## When agents load this skill
 
 Use when developing Tauri v2 desktop or mobile applications: configuration, Rust commands, frontend events and channels, shared state, resources and sidecars, dependency updates, icons, debugging, plugins, mobile permissions, IPC mocks, Selenium or WebdriverIO tests. Not for Tauri v1.
 
-## What this skill helps with
-
-| Task | Useful reference material |
-| --- | --- |
-| [Connect Rust and the frontend](references/rust-commands-events-index.md) | Choose command and event guidance, including registration and listener lifecycle details. |
-| [Bundle resources and sidecars](references/resources-sidecars-index.md) | Find resource paths, external-process setup and the associated platform conditions. |
-| [Build plugins](references/plugin-development-index.md) | Follow plugin development routes and continue into mobile-specific guidance where needed. |
-| [Debug and test an application](references/webdriver-testing-index.md) | Find browser-driver testing workflows alongside the separate debugging and IPC-mock references. |
-
 ## The work behind the references
 
-The references have been reorganized into descriptive topics with linked setup and continuation files. Identified formatting and code-example defects were repaired during source review, including command registration and workflow examples; complete examples and illustrative fragments are distinguished.
+The references have been reorganized into descriptive topics with linked setup and continuation files. Formatting and code-example defects found during source review were repaired, including command registration and workflow examples, and complete examples are marked apart from illustrative fragments. The web surface pages come from the [Modern Web Development](https://github.com/LevyBytes/AI-SKILL-modern-web-development) skill, with a router page for what differs in a native WebView.
 
-## Start here
+## Contributing
 
-Start with [SKILL.md](SKILL.md) and follow its context routes.
-
-Use this package with Tauri v2. Read each example's linked setup, dependencies and target-platform conditions before adapting it. Begin with [configuration](references/development-configuration-index.md) or [debugging tools](references/debugging-tools-index.md) when the application context is not yet established.
+Pull requests are accepted from approved contributors only. To propose a fix or a feature, first open an issue that describes the change your pull request would make, such as an example that fails on Tauri v2 or a plugin API that changed, and the Tauri documentation it should match. The maintainer reviews the issue and your GitHub account, then approves or declines. New maintainers are approved the same way. See [CONTRIBUTING](.github/CONTRIBUTING.md).
 
 ## Sources and license
 
